@@ -1,0 +1,16 @@
+{
+  "name": "MarvelSearchDemo",
+  "version": "1.0.0",
+  "dependencies": {
+    "gulp-clean-css": "^4.3.0",
+    "gulp-purgecss": "^2.3.0",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "precss": "^4.0.0",
+    "tailwindcss": "^1.2.0"
+  }
+}
