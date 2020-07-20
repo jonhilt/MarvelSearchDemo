@@ -18,7 +18,7 @@ namespace MarvelSearchDemo
             builder.RootComponents.Add<App>("app");
 
             builder.Services.AddTransient(sp => new HttpClient
-                {BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)});
+                {BaseAddress = new Uri("https://gateway.marvel.com:443/v1/public/")});
 
             await builder.Build().RunAsync();
         }
