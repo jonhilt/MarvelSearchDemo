@@ -8,8 +8,17 @@
 
 @if (string.IsNullOrEmpty(apiKey))
 {
-    <div class="shadow-md p-6 bg-purple-500 text-white text-center mt-2">
-        <p>To continue you'll need to head over to <span class="font-bold">wwwroot\appsettings.json</span> and update it with your public Marvel API Key!</p>
+    <div class="shadow-md p-6 border-2 border-purple-500 text-gray-600 text-left mt-2 rounded-md border-dashed">
+        <p>To continue you'll need to head over to <span class="font-bold">wwwroot</span> and add an <span class="font-bold">appsettings.json</span> file as follows</p>
+        <pre class="text-left bg-gray-600 mt-4 text-white">
+<code>
+    {
+        "Marvel": {
+            "ApiKey": "Your Key Here"
+        }
+    }
+</code>
+        </pre>
     </div>
 }
 else
