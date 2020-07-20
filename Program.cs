@@ -14,7 +14,7 @@ namespace MarvelSearchDemo
     {
         public static async Task Main(string[] args)
         {
-            var builder = WebAssemblyHostBuilder.CreateDefault(args);
+            WebAssemblyHostBuilder builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
             builder.Services.AddTransient(sp => new HttpClient
@@ -22,5 +22,9 @@ namespace MarvelSearchDemo
 
             await builder.Build().RunAsync();
         }
+    }
+
+    public class AppConfiguration
+    {
     }
 }

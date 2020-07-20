@@ -1,7 +1,18 @@
 ﻿@page "/"
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
 
-<h1>Hello, world!</h1>
+@{
+    var apiKey = Configuration.GetValue<string>("Marvel:ApiKey");
+}
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?"/>
+@if (string.IsNullOrEmpty(apiKey))
+{
+    <div class="shadow-md p-6 bg-purple-500 text-white text-center mt-2">
+        <p>To continue you'll need to head over to <span class="font-bold">wwwroot\appsettings.json</span> and update it with your public Marvel API Key!</p>
+    </div>
+}
+else
+{
+    <h2>Welcome!</h2>
+}
