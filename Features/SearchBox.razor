@@ -1,0 +1,17 @@
+<div class="text-center">
+    <h1 class="text-5xl mb-6 text-gray-700">Marvel Search Engine</h1>
+
+    <input type="text" class="border border-purple-600 p-2 w-4/6 block mx-auto" @bind-value="_searchTerm"/>
+    <button @onclick="Search" class="bg-purple-500 p-3 text-white block mx-auto my-4 w-2/6">Search the Marvel API</button>
+
+</div>
+
+@code
+{
+    private string _searchTerm;
+
+    private void Search()
+    {
+        Console.WriteLine("Searching...");
+    }
+}

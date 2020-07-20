@@ -26,11 +26,11 @@
     <Content Update="Pages\ConfigCheck.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+    <Content Update="Features\SearchBox.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Features" />
   </ItemGroup>
 </Project>
