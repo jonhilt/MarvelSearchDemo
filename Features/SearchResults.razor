@@ -1,0 +1,30 @@
+<div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    
+    @foreach (var result in _searchResults)
+    {
+        <div class="border border-gray-300 p-6 m-2 rounded-md">
+            @result.Name
+        </div>
+    }
+   
+</div>
+
+@code
+{
+    private readonly List<SearchResult> _searchResults = new List<SearchResult>
+    {
+        new SearchResult
+        {
+            Name = "Spider-Man"
+        },
+        new SearchResult
+        {
+            Name = "Spider-dok"
+        }
+    };
+
+    private class SearchResult
+    {
+        public string Name { get; set; }
+    }
+}
