@@ -13,5 +13,9 @@
     private void Search()
     {
         Console.WriteLine("Searching...");
+        OnSearch.InvokeAsync(_searchTerm);
     }
+
+    [Parameter]
+    public EventCallback<string> OnSearch { get; set; }
 }

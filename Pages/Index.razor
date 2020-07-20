@@ -1,8 +1,28 @@
 ﻿@page "/"
 @using Microsoft.Extensions.Configuration
+@using System.Text.Json
 @inject IConfiguration Configuration
+@inject HttpClient HttpClient
 
-<ConfigCheck />
+<ConfigCheck/>
 
-<SearchBox />
-<SearchResults />
+<SearchBox OnSearch="HandleSearch"/>
+<SearchResults Results="@SearchResponse"/>
+
+@code
+{
+
+    private MarvelSearchResult SearchResponse;
+
+    private async Task HandleSearch(string searchTerm)
+    {
+        var url = $"characters?nameStartsWith={searchTerm}&apikey={Configuration.GetValue<string>("Marvel:ApiKey")}";
+
+        SearchResponse = await HttpClient
+            .GetFromJsonAsync<MarvelSearchResult>(url, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+    }
+
+}
