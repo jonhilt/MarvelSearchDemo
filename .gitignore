@@ -32,3 +32,4 @@ _ReSharper*/
 packages/
 /.idea/
 /node_modules/
+/wwwroot/appsettings.json
