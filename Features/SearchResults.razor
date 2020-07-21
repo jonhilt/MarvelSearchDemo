@@ -1,20 +1,20 @@
 <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    
     @if (Results != null)
     {
         @foreach (var result in Results.Data.Results)
         {
-            <div class="border border-gray-300 p-6 m-2 rounded-md">
-                @result.Name
+            <div class="border border-gray-300 m-2 rounded-md">
+                <img src="@($"{result.Thumbnail.Path}.{result.Thumbnail.Extension}")" class="block mx-auto object-contain h-64" alt="@result.Name"/>
+                <div class="p-6">
+                    @result.Name
+                </div>
             </div>
         }
     }
-
-   
 </div>
 
 @code
 {
-   [Parameter]
-   public MarvelSearchResult Results { get; set; }
+    [Parameter]
+    public MarvelSearchResult Results { get; set; }
 }
